@@ -1,0 +1,20 @@
+#download base image for the docker hub
+FROM python:3.12
+
+#working directory
+WORKDIR  /app
+
+
+#copy from the current directory
+COPY . /app
+
+
+
+#commands to run
+RUN pip install -r requirements.txt
+
+#Port 
+EXPOSE 8000
+
+#how to run code
+CMD [ "python3", "app.py" ] 
